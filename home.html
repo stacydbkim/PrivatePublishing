@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>stacy likes her gifts!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Edu+NSW+ACT+Foundation:wght@600&family=Roboto:ital@1&display=swap" rel="stylesheet">
+
+
+    <style>
+      .draggable {
+        width: 100px;
+        height: 100px;
+        cursor: grabbing;
+        position: absolute;
+      }
+    </style>
+  <script>   
+    var dragItem = null;
+    var offsetX = 0;
+    var offsetY = 0;
+
+    function dragStart(event) {
+      event.preventDefault();
+      dragItem = event.target;
+      offsetX = event.clientX - dragItem.offsetLeft;
+      offsetY = event.clientY - dragItem.offsetTop;
+    }
+
+    function dragEnd(event) {
+      dragItem = null;
+    }
+
+    function drag(event) {
+      if (dragItem) {
+        event.preventDefault();
+        dragItem.style.left = (event.clientX - offsetX) + "px";
+        dragItem.style.top = (event.clientY - offsetY) + "px";
+      }
+    }
+  </script>
+
+
+  </head>
+<body onmousemove="drag(event)" onmouseup="dragEnd(event)">
+  <style>
+    img {
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: auto;
+    }
+    img:hover {
+      transform: scale(2.5);
+    }
+  </style>
+  <img id="image1" class="draggable" src="./Video/perfume.png"  width="100" height="100" title="Feb, 2022. From Jill.
+Jill went to a shop called WELAB74 in Euljiro where she crafted this perfume just for me :') She said she combined natural scents that reminded her of me. It's really fun to get a 'scent' of what kind of smell I remind them of. Usually when I buy a perfume, I think of what I would like to smell like. But this time, it was the other way around. Such a cute, thoughtful gift." draggable="true" ondragstart="dragStart(event)">
+  <img id="image2" class="draggable" src="./Video/earrings.png" width="100" height="100" title="Oct, 2022. From Ella & Tilly.
+A pair of beautiful garnet earrings from czech republic<3 First time I learned that the country is known for its Bohemian garnets. In fact, I don't have my ears pierced but am seriously considering getting it done just so I can flaunt these beauties." draggable="true" ondragstart="dragStart(event)">
+  <img id="image3" class="draggable" src="./Video/candles.png" width="100" height="100" title="Nov, 2022. From Lavinia.
+These mini candles are from London, where Lavi picked up during her visit to her brother Sami's graduation. Each candle lights up for 20 mintues, for an intentional, mindful time. I use it just to stare at the fire for 20 minutes, and it's the most relaxing thing. A great way to do aboslutely nothing, intentionally." draggable="true" ondragstart="dragStart(event)">
+  <img id="image3" class="draggable" src="./Video/arduino.png" width="100" height="100" title="Feb, 2022. From Kyungtae.
+I used to talk about how much I want to play with Arduino and make a bunch of art projects with it. I love exploring electronic or mechanical tools to transform them into a meaningful artwork." draggable="true" ondragstart="dragStart(event)">
+  <img id="image3" class="draggable" src="./Video/plate.png" width="100" height="100" title="Feb, 2022. From Jess.
+It's thee cutest sauce plate! I never new I needed a cute sauce plate until I got one. I put soy sauce, peanut butter, and whatever dipping liquid in it and it makes me so happy to see the cute bunny graphics and lil' patterns and all while I eat." draggable="true" ondragstart="dragStart(event)">
+    <script>
+      /* Generate a random position for each image */
+      var images = document.querySelectorAll('img');
+      for (var i = 0; i < images.length; i++) {
+        var x = Math.floor(Math.random() * window.innerWidth);
+        var y = Math.floor(Math.random() * window.innerHeight);
+        images[i].style.left = x + 'px';
+        images[i].style.top = y + 'px';
+      }
+    </script>
+</body>
+
+
+  <body>
+    <video id="background-video" autoplay loop muted>
+      <source src="./Video/VideoFace.mp4"/>
+    </video>
+
+
+    <video id="myVidPlayer" muted autoplay style="opacity: 0.5;"></video>
+</video>
+    <script type="text/javascript">
+    //Selector for your <video> element
+    const video = document.querySelector('#myVidPlayer');
+
+    //Core
+    window.navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            video.onloadedmetadata = (e) => {
+                video.play();
+            };
+        })
+        .catch( () => {
+            alert('You give browser the permission to run Webcam and mic ;( ');
+        });
+
+</script>
+
+
+    <p><center>
+      Hover the mouse on each item to see excessive information.</center></p>
+
+  </body>
+</html>

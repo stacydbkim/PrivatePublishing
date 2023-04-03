@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+Enter password: <input id='password' type='text'  />
+<a href="./index.html" onclick="javascript:return validatePass()">i'm stacy's friend!</a>
+<script>
+function validatePass(){
+    if(document.getElementById('password').value == 'peach'){
+        return true;
+    }else{
+        alert('wrong password!!');
+        return false;
+    }
+}
+</script>

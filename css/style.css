@@ -1,0 +1,45 @@
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -2;}
+
+#myVidPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;}
+
+h1, h2 {
+  color: #5e5f6a;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+body {
+  color: #5e5f6a;
+  font-weight: regular;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+    margin-top: 3vh;
+}
+
+/*h2 { font-size: 3rem; }
+*/
+
+
+
